@@ -1,4 +1,4 @@
-import mathsi
+import CURSO.SEGUNDO.module.mathsi as mathsi
 
 result = mathsi.pi
 print(result)
