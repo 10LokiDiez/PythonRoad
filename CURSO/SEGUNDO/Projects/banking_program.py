@@ -1,4 +1,4 @@
-def show_balance():
+def show_balance(balance):
     print(f"Su saldo es: {balance}$", end="\n\n")
 
 def deposit():
@@ -12,7 +12,7 @@ def deposit():
         return 0
     
 
-def withdraw():
+def withdraw(balance):
     num = float(input("Ingrese cuanto quiere sacar: "))
     
     if num > balance:
@@ -38,11 +38,11 @@ def main():
         
         match choice:
             case 1:
-                show_balance()
+                show_balance(balance)
             case 2:
-                balance += deposit()
+                balance += deposit(balance)
             case 3:
-                balance -= withdraw()
+                balance -= withdraw(balance)
             case 4:
                 break
             case _:
