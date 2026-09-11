@@ -1,10 +1,10 @@
 import random
 
 def gamb(sym):
-    nums = [random.randint(0,4) for x in range(0,3) ]
+    nums = [random.randint(0,4) for _ in range(0,3) ]
     print("*************")
     for num in nums:
-        print(f"{sym[num]}  ", end=" ")
+        print(f"{sym[num]}",end="  ")
     print()
     print("*************")
     if nums.count(nums[0]) == 3:
@@ -25,13 +25,17 @@ def main():
         print(f"Balance actual {balance}$")
         if balance == 0:
             break
-        bet = int(input("Ingrese su apuesta: "))
+        bet = input("Ingrese su apuesta: ")
+        if not bet.isdigit():
+            print("Error, no es un digito")
+            continue
+        bet = int(bet)
         if bet <= 0:
             print("Vuelve a intentarlo, es mayor a 0")
-            pass
+            continue
         elif bet > balance:
             print("Vuelve a intentarlo, no tienes tanto dinero...")
-            pass
+            continue
         else:
             print("Girando...", end ="\n\n")
             if gamb(symbols):
@@ -40,7 +44,17 @@ def main():
             else:
                 balance -= bet
                 print("Perdiste esta ronda")
-            is_running == True if input("Quieres volver a Jugar (S/N)?: ").lower() == "s" else is_running == False
+                
+            ind= input("Quieres volver a Jugar (S/N)?: ").lower()
+                
+            if ind == "s":
+                continue
+            else:
+                break
+            
+    print("MUCHAS GRACIAS!!")
+                
+                
 
 
 if __name__ == '__main__':
