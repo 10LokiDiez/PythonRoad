@@ -49,23 +49,30 @@ def main():
         if "_" not in try_word:
             print(f"Ganaste!!!! ")
             break
+        
         imprimir(live, hang)
+        
         if live == 6:
             print(f"Perdiste, era {word}")
             break
+        
         for wordi in try_word:
             print(f"{wordi} ", end="")
         print()
+        
         guess = input("Ingresa una letra: ").lower()
+        
         if len(guess) != 1 or not guess.isalpha():
             print("Error, ingresa solo una letra")
             continue
-        if word.count(guess) > 0:
-            if guess in guesses:
-                print("Ya intentaste esa letra")
-                continue
-            print(f"Correcto, la palabra era: {guess}")
+        
+        if guess in guesses:
+            print("Ya intentaste esa letra")
             guesses.add(guess)
+            continue
+        
+        if word.count(guess) > 0:
+            print(f"Correcto, la palabra era: {guess}")
             for i in range(len(word)):
                 if guess == word[i]:
                     try_word[i] = guess
