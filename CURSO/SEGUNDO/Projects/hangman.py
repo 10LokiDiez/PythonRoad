@@ -47,7 +47,7 @@ def main():
     
     while True:
         if "_" not in try_word:
-            print(f"Ganaste!!!! ")
+            print(f"Ganaste!!!!, es {word} ")
             break
         
         imprimir(live, hang)
@@ -72,7 +72,7 @@ def main():
             continue
         
         if word.count(guess) > 0:
-            print(f"Correcto, la palabra era: {guess}")
+            print(f"Correcto, la letra era: {guess}")
             for i in range(len(word)):
                 if guess == word[i]:
                     try_word[i] = guess
