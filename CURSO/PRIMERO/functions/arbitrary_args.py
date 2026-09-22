@@ -16,8 +16,8 @@ def add(*args):
     print(type(args))
     total = 0
     for arg in args:
-        print(arg)
         total += arg
+        print(f"{arg} : total {total}")
     return total
 
 print(f"TU RESULTADO ES: {add(1,2,3,20, 4)}")

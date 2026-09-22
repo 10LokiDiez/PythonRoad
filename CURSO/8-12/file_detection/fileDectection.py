@@ -1,0 +1,8 @@
+import os
+
+file_path = "test.txt"
+
+if os.path.exists(file_path):
+    print(f"The file {file_path} exist")
+else:
+    print(f"The file {file_path} doesnt exist")
