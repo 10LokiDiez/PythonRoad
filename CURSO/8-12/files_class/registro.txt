@@ -1,0 +1,4 @@
+Nombre: luna, Edad: 18
+Nombre: juan, Edad: 20
+Nombre: simon, Edad: 23
+Nombre: luca, Edad: 22

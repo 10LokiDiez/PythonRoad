@@ -7,8 +7,7 @@ try:
             for it in row:
                 print(f" {it:10} |", end="" )
             print()
-            
-
+        
         
 except FileNotFoundError:
     print("That file was not found")
